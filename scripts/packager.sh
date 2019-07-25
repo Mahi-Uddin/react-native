@@ -21,4 +21,8 @@ then
 fi
 # Start packager from PROJECT_ROOT
 cd "$PROJECT_ROOT" || exit
+if [ -z "$NODE_BINARY" ]
+then
+  export NODE_BINARY="node"
+fi
 "$NODE_BINARY" "$REACT_NATIVE_ROOT/cli.js" start "$@"
